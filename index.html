@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stickman Classroom Presenter</title>
+
+    <!-- Connect CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Stickman Classroom</h1>
+        <p class="subtitle">
+            An interactive mathematics teacher
+        </p>
+
+        <div class="classroom">
+
+            <!-- CLASSROOM AND BLACKBOARD -->
+
+            <svg id="classroom" viewBox="0 0 900 500">
+
+                <!-- Wall -->
+                <rect width="900" height="500" fill="#dce5e8"/>
+
+                <!-- Blackboard -->
+                <rect x="265" y="65" width="590" height="350"
+                      rx="10" fill="#202e29"
+                      stroke="#765b3c" stroke-width="13"/>
+
+                <!-- Blackboard tray -->
+                <rect x="260" y="415" width="600" height="15"
+                      rx="4" fill="#765b3c"/>
+
+                <!-- Blackboard title -->
+                <text x="560" y="125"
+                      fill="#a7d8b0"
+                      font-size="27"
+                      text-anchor="middle">
+                    MATHEMATICS
+                </text>
+
+                <!-- Numbers -->
+                <g id="numbers">
+
+                    <text class="number selected"
+                          data-number="1" x="390" y="235">1</text>
+
+                    <text class="number"
+                          data-number="2" x="510" y="235">2</text>
+
+                    <text class="number"
+                          data-number="3" x="630" y="235">3</text>
+
+                    <text class="number"
+                          data-number="4" x="750" y="235">4</text>
+
+                    <text class="number"
+                          data-number="5" x="450" y="335">5</text>
+
+                    <text class="number"
+                          data-number="6" x="650" y="335">6</text>
+
+                </g>
+
+                <!-- Chalk markings -->
+                <ellipse id="circleMark"
+                         cx="390" cy="216"
+                         rx="43" ry="42"/>
+
+                <path id="underlineMark"
+                      d="M 350 255 L 430 255"/>
+
+                <!-- STICKMAN -->
+
+                <!-- Head -->
+                <circle cx="145" cy="145" r="37"
+                        fill="#f4d0a5"
+                        stroke="#171717" stroke-width="6"/>
+
+                <!-- Eyes -->
+                <circle cx="134" cy="140" r="3" fill="#171717"/>
+                <circle cx="156" cy="140" r="3" fill="#171717"/>
+
+                <!-- Smile -->
+                <path d="M 132 157 Q 145 168 158 157"
+                      fill="none" stroke="#171717"
+                      stroke-width="3"/>
+
+                <!-- Body -->
+                <path class="stickman-line"
+                      d="M 145 183 L 145 310"/>
+
+                <!-- Left arm -->
+                <path class="stickman-line"
+                      d="M 145 215 L 95 265 L 75 245"/>
+
+                <!-- Right arm -->
+                <path id="pointingArm"
+                      class="stickman-line"
+                      d="M 145 215 L 220 190"/>
+
+                <!-- Legs -->
+                <path class="stickman-line"
+                      d="M 145 310 L 105 385"/>
+
+                <path class="stickman-line"
+                      d="M 145 310 L 185 385"/>
+
+                <!-- Shoes -->
+                <path class="stickman-line"
+                      d="M 105 385 L 80 385"/>
+
+                <path class="stickman-line"
+                      d="M 185 385 L 210 385"/>
+
+                <!-- Floor -->
+                <path d="M 0 430 L 900 430"
+                      stroke="#777" stroke-width="4"/>
+
+                <!-- Teacher label -->
+                <text x="145" y="460"
+                      fill="#333" font-size="17"
+                      text-anchor="middle">
+                    TEACHER
+                </text>
+
+            </svg>
+
+            <!-- NUMBER SELECTION -->
+
+            <h3>Select a number</h3>
+
+            <div class="controls number-buttons">
+
+                <button class="active" data-select="1">1</button>
+                <button data-select="2">2</button>
+                <button data-select="3">3</button>
+                <button data-select="4">4</button>
+                <button data-select="5">5</button>
+                <button data-select="6">6</button>
+
+            </div>
+
+            <!-- ACTION BUTTONS -->
+
+            <h3>Control the stickman</h3>
+
+            <div class="controls">
+
+                <button id="pointBtn">👉 Point at number</button>
+
+                <button id="circleBtn">⭕ Circle number</button>
+
+                <button id="underlineBtn">✏️ Underline</button>
+
+                <button id="explainBtn">🗣 Explain number</button>
+
+                <button id="waveBtn">👋 Wave hand</button>
+
+                <button id="eraseBtn">🧽 Erase marking</button>
+
+                <button id="clearBtn">🗑 Clear board</button>
+
+                <button id="nextBtn">➡️ Next number</button>
+
+            </div>
+
+            <!-- STATUS MESSAGE -->
+
+            <div class="status" id="status">
+                Welcome! Select a number and choose an action.
+            </div>
+
+        </div>
+
+        <!-- INSTRUCTIONS -->
+
+        <div class="instructions">
+
+            <h3>How to use the classroom</h3>
+
+            <ol>
+                <li>Select a number from 1 to 6.</li>
+                <li>Click Point at number to make the stickman point.</li>
+                <li>Click Circle number to draw a circle.</li>
+                <li>Click Underline to underline the number.</li>
+                <li>Click Explain number to explain the number.</li>
+                <li>Click Wave hand to greet the class.</li>
+                <li>Use Erase marking or Clear board to clean the board.</li>
+            </ol>
+
+        </div>
+
+    </div>
+
+    <!-- Connect JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
